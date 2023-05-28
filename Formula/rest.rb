@@ -5,13 +5,15 @@ class Rest < Formula
   sha256 'ca498e4985c21405e24d77db26045ac22df559fcdb3d81129cd5cc27a3d77967'
   head 'https://github.com/Vagab/rest.git'
 
-  # depends_on 'brightness' => :build
+  resource 'brightness' do
+    url 'https://github.com/nriley/brightness.git', using: :git
+  end
 
   def install
-    system 'git clone https://github.com/nriley/brightness.git'
-    system 'cd brightness'
-    system 'make'
-    system 'sudo make install'
+    resource('brightness').stage do
+      system 'make'
+      bin.install 'brightness'
+    end
     bin.install 'rest.rb' => 'rest'
   end
 
