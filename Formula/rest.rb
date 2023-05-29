@@ -1,8 +1,8 @@
 class Rest < Formula
   desc 'Control screen dimming to rest your eyes'
   homepage 'https://github.com/Vagab/rest'
-  url 'https://github.com/Vagab/rest/archive/v0.1.2.tar.gz'
-  sha256 '32224a691bebb1c9d32943f0aa13146c37bb7e205d4aced4693c94a392dc23b7'
+  url 'https://github.com/Vagab/rest/archive/v0.1.3.tar.gz'
+  sha256 '6510c524adab6c02a31d7e20780021b2d61ea25172bbd96b00a2841e6028a168'
   head 'https://github.com/Vagab/rest.git'
 
   resource 'brightness' do
