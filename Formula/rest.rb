@@ -9,11 +9,16 @@ class Rest < Formula
     url 'https://github.com/nriley/brightness.git', using: :git
   end
 
+  depends_on 'gcc' => :build
+
   def install
     resource('brightness').stage do
       system 'make'
       bin.install 'brightness'
     end
+
+    system 'make'
+    bin.install 'logger'
     bin.install 'rest.rb' => 'rest'
   end
 
